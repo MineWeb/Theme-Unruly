@@ -187,7 +187,7 @@ if(isset($config['logo']) && $config['logo']) {
                     </div>
                 </div>
                 
-                <?php if($EyPlugin->isInstalled('eywek.vote.3')){ ?>
+                <?php if($EyPlugin->isInstalled('eywek.vote')){ ?>
               <!-- Panel Vote sidebar -->
               <div class="panel panel-default">
                   <div class="panel-heading">
