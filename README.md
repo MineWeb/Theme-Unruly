@@ -37,7 +37,6 @@ ___
 Pour installer ce thème vous devez :
 - Télécharger le .zip (Bouton vert avec l'instruction "Clone or download" en haut à droite)
 - Déplacer le dossier télécharger "**Theme-Unruly**" dans : ```app\View\Themed\```
-- Renommer le dossier "**Theme-Unruly**" en "**Unruly**"
 - Activer le thème depuis le Panel Administrateur (Autres > Thèmes)
 
 
