@@ -1,8 +1,8 @@
 {
     "name": "Unruly",
-    "slug": "Unruly",
+    "slug": "Theme-Unruly",
     "author": "Orphevs",
-    "version": "1.2.1",
+    "version": "1.2.0",
     "apiID": 0,
     "slider": true,
     "configurations": {
