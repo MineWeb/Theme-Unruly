@@ -238,18 +238,20 @@
             </div>
         <?php } ?>
     <!-- Vote -->
-    <?php if(isset($theme_config['vote_global']) && $theme_config['vote_global'] && $EyPlugin->isInstalled('eywek.vote')){ ?>
-      <div class="panel panel-default">
-        <div class="panel-heading"><?= $Lang->get('VOTE__TITLE') ?></div>
-        <div class="panel-body">
-            <p class="text-center">Votez pour le serveur et gagnez des récompenses !</p><hr>
-            <?php if(isset($theme_config['vote_url']) && $theme_config['vote_url']){ ?>
-                <a href="<?= $theme_config['vote_url'] ?>" class="btn btn-theme btn-lg">Je veux voter !</a>
-            <?php } else { ?>
-                <a href="/vote" class="btn btn-theme btn-lg">Je veux voter !</a>
-            <?php } ?>
-        </div>
-      </div>
+    <?php if($EyPlugin->isInstalled('eywek.vote')){ ?>
+        <?php if(isset($theme_config['vote_global']) && $theme_config['vote_global'] == "true") { ?>
+          <div class="panel panel-default">
+            <div class="panel-heading"><?= $Lang->get('VOTE__TITLE') ?></div>
+            <div class="panel-body">
+                <p class="text-center">Votez pour le serveur et gagnez des récompenses !</p><hr>
+                <?php if(isset($theme_config['vote_url']) && $theme_config['vote_url']){ ?>
+                    <a href="<?= $theme_config['vote_url'] ?>" class="btn btn-theme btn-lg">Je veux voter !</a>
+                <?php } else { ?>
+                    <a href="/vote" class="btn btn-theme btn-lg">Je veux voter !</a>
+                <?php } ?>
+            </div>
+          </div>
+        <?php } ?>
     <?php } ?>
     
     <?php if(!isset($theme_config['discord']) || $theme_config['discord'] == "true") { ?>
