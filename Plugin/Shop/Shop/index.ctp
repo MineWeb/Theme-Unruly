@@ -40,21 +40,31 @@
 
           <div class="panel-body">
             <ul class="nav nav-pills nav-stacked category-menu">
-              <?php
-              $i=0;
-              foreach ($search_categories as $category_link) {
-                $i++;
+              <?php foreach ($search_sections as $v) { ?>
+                                <li class="active">
+                                    <a class="btn btn-secondary text-left dropdown-toggle" type="button"
+                                       data-toggle="dropdown">
+                                        <?= before_display($v['Section']['name']) ?>
+                                        <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <?php foreach ($search_categories_section[$v['Section']['id']] as $va) { ?>
+                                            <li>
+                                                <a
+                                                        href="<?= $this->Html->url(array('controller' => 'c/' . $va['Category']['id'], 'plugin' => 'shop')) ?>"><?= before_display($va['Category']['name']) ?></a>
+                                            </li>
+                                        <?php } ?>
+                                    </ul>
 
-                echo '<li';
-                  echo (isset($category) && $category_link['Category']['id'] == $category || (!isset($category) && $i == 1)) ? ' class="active"' : '';
-                echo '>';
-                  echo '<a href="'.$this->Html->url(array('controller' => 'c/'.$category_link['Category']['id'], 'plugin' => 'shop')).'">';
-                    echo $category_link['Category']['name'];
-                  echo '</a>';
-                echo '</li>';
-
-              }
-              ?>
+                                </li>
+                            <?php } ?>
+                            <?php $i = 0;
+                            foreach ($search_categories_without_section as $v) {
+                                $i++; ?>
+                                <li class="<?= (isset($category) && $v['Category']['id'] == $category || (!isset($category) && $i == 1)) ? ' active' : ''; ?>">
+                                    <a href="<?= $this->Html->url(array('controller' => 'c/' . $v['Category']['id'], 'plugin' => 'shop')) ?>"
+                                       class="btn btn-secondary"><?= before_display($v['Category']['name']) ?></a>
+                                </li>
+                            <?php } ?>
             </ul>
           </div>
 
