@@ -9,11 +9,11 @@ if(isset($config['logo']) && $config['logo']) {
 <section class="content">
   <div class="row">
     <div class="col-md-12">
-      <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title"><?= $Lang->get('THEME__CUSTOMIZATION') ?></h3>
+      <div class="card">
+        <div class="card-header with-border">
+          <h3 class="card-title"><?= $Lang->get('THEME__CUSTOMIZATION') ?></h3>
         </div>
-        <div class="box-body">
+        <div class="card-body">
 
           <form method="post" enctype="multipart/form-data" data-ajax="false">
               <div class="col-md-12" style="margin-top:10px;">
@@ -70,7 +70,7 @@ if(isset($config['logo']) && $config['logo']) {
                         <script type="text/javascript">
                         tinymce.init({
                                 selector: "#Banner",
-                                height : 100,
+                                height : 300,
                                 width : '100%',
                                 language : 'fr_FR',
                                 plugins: "textcolor code image link",
@@ -207,8 +207,8 @@ if(isset($config['logo']) && $config['logo']) {
                         </select>
                       <?php if(!isset($theme_config['status_global']) || $theme_config['status_global'] == "true") { ?>
                     <div class="form-group">
-                <div class="checkbox">
-                  <input type="checkbox" name="status" id="status"<?= (isset($config['status']) && $config['status'] == 'true') ? ' checked' : '' ?>>
+                <div class="checkcard">
+                  <input type="checkcard" name="status" id="status"<?= (isset($config['status']) && $config['status'] == 'true') ? ' checked' : '' ?>>
                   <label>Statut du serveur amélioré</label>
                 </div>
               </div>
